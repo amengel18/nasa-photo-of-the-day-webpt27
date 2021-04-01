@@ -4,6 +4,15 @@ import axios from 'axios'
 import Header from './Components/Header'
 import PhotoOfTheDay from './Components/PhotoOfTheDay'
 import Footer from './Components/Footer'
+import styled from 'styled-components'
+
+const StyledApp = styled.div`
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+`
 
 function App() {
   const [ nasaData, setNasaData ] = useState([])
@@ -20,7 +29,7 @@ function App() {
   useEffect(fetchPhoto, [])
 
   return (
-    <div className="App">
+    <StyledApp >
       {/* <p>
         Read through the instructions in the README.md file to build your NASA
         app! Have fun <span role="img" aria-label='go!'>🚀</span>!
@@ -28,7 +37,7 @@ function App() {
         <Header nasaData={nasaData}/>
         <PhotoOfTheDay nasaData={nasaData}/>
         <Footer nasaData={nasaData}/>
-    </div>
+    </StyledApp>
   );
 }
 
